@@ -34,8 +34,8 @@ class Solution:
                         temp_list.clear()
 
 
-
-        return list(set(result))
+        unique_list = [list(x) for x in set(result)]
+        return unique_list
 
 
 s = Solution()
