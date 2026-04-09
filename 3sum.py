@@ -10,7 +10,7 @@ class Solution:
                     temp_list.append(nums[index+1])
                     temp_list.append(-1 * nums[index+1])
                     if temp_list:
-                        result.append(tuple(temp_list[:]))
+                        result.append(tuple(sorted(temp_list[:])))
                     temp_list.clear()
 
             if num % 2 != 0:
@@ -19,7 +19,7 @@ class Solution:
                     temp_list.append(-1 * num)
                     temp_list.append(num)
                     if temp_list:
-                        result.append(tuple(temp_list[:]))
+                        result.append(tuple(sorted(temp_list[:])))
                     temp_list.clear()
 
             else:
@@ -30,14 +30,15 @@ class Solution:
                         temp_list.append(int(-(1/2) * num))
                         temp_list.append(int(-(1/2) * num))
                         if temp_list:
-                            result.append(tuple(temp_list[:]))
+                            result.append(tuple(sorted(temp_list[:])))
                         temp_list.clear()
 
 
 
-        return set(result)
+        return list(set(result))
 
 
 s = Solution()
 print(s.threeSum([-1,0,1,2,-1,-4]))
+
 
